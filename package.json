@@ -13,5 +13,14 @@
     "fonts"
   ],
   "author": "MayStar Consulting",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gulp-postcss": "^6.1.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "cssnano": "^3.7.4",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.1.1"
+  }
 }
