@@ -3,9 +3,9 @@
     background-image: linear-gradient(to bottom, hsla(200, 100%, 50%, 0.3) 1px, transparent 1px);
     background-repeat: repeat;
     background-position: left -1px;
-    background-size: round(($font-size-base * $line-height-base)) * 1px round(($font-size-base * $line-height-base)) * 1px;
     max-width: 768px;
     margin: 0 auto;
+    background-size: round(($font-size-base * $line-height-base)) * 1px round(($font-size-base * $line-height-base)) * 1px;
     padding: round(($font-size-base * $line-height-base)) * 1px;
     box-shadow: 1px 0 0 hsla(200, 100%, 50%, 0.3), -1px 0 0 hsla(200, 100%, 50%, 0.3);
   }

@@ -11,7 +11,8 @@
 @mixin heading-size($step, $unit: "rem", $base-value: $font-size-base) {
 
   // Font Size
-  $computed-font-size: round($font-size-base * pow($line-height-base, $step));
+  // Example round(18px * 1.414^3) -> 50
+  $computed-font-size: round($font-size-base * pow($scale-factor, $step));
 
   // Line height
   $line-height: round($font-size-base * $line-height-base);
