@@ -1,0 +1,17 @@
+{
+  "name": "sutra-css",
+  "version": "1.0.0",
+  "description": "A typographically inclined css framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "css",
+    "typography",
+    "framework",
+    "fonts"
+  ],
+  "author": "MayStar Consulting",
+  "license": "ISC"
+}
