@@ -28,6 +28,6 @@
   @if ($step > 1) {
     $margin-top: $line-height * 2;
   }
-  margin-top: sgl-rem-calc($margin-top);
-  margin-bottom: sgl-rem-calc($line-height);
+  margin-top: sgl-rem-calc($margin-top / 3 * 5);
+  margin-bottom: sgl-rem-calc($line-height / 3 * 1);
 }
