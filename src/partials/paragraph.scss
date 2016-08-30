@@ -1,0 +1,9 @@
+p {
+  @include body-size();
+  padding-left: 1rem;
+
+  .lead {
+    @include heading-size(1);
+    font-weight: $lead-font-weight;
+  }
+}

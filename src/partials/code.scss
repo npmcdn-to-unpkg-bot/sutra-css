@@ -1,7 +1,3 @@
-pre {
-
-}
-
 p > code {
-  @include sgl-heading(0, "rem");
+  @include body-size(0);
 }

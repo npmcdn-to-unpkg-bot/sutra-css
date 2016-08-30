@@ -1,0 +1,31 @@
+// Setting body size
+@mixin body-size($font-size: $font-size-base, $unit: "rem") {
+
+  // Line height
+  $line-height: round(($font-size * $line-height-base));
+
+  font-size: sgl-rem-calc($font-size);
+  line-height: sgl-rem-calc($line-height);
+}
+
+@mixin heading-size($step, $unit: "rem", $base-value: $font-size-base) {
+
+  // Font Size
+  $computed-font-size: round($font-size-base * pow($line-height-base, $step));
+
+  // Line height
+  $line-height: round($font-size-base * $line-height-base);
+  $computed-line-height: $line-height * ceil($computed-font-size / $line-height);
+
+  // Margin top
+  $margin-top: $line-height;
+
+  font-size: sgl-rem-calc($computed-font-size);
+  line-height: sgl-rem-calc($computed-line-height);
+
+  @if ($step > 1) {
+    $margin-top: $line-height * 2;
+  }
+  margin-top: sgl-rem-calc($margin-top);
+  margin-bottom: sgl-rem-calc($line-height);
+}

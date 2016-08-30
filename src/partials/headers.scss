@@ -1,5 +1,5 @@
 // Headings Options
-// [ h1: size (in rem), line height (* leading), margin top (* leading), margin bottom (* leading) ]
+
 $headings: (
   h1: (3),
   h2: (2),
@@ -11,7 +11,8 @@ $headings: (
 
 @each $heading, $properties in $headings {
   #{$heading} {
-    @include sgl-heading($properties, "rem");
+    @include heading-size($properties);
+
     color: $gray-dark;
   }
 }

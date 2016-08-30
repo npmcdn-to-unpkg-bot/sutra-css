@@ -6,13 +6,18 @@
 // User
 @import "sutra.config";
 
-// Utlities: Reset
+// Utlities
 @import "utilities/reset";
 @import "utilities/math";
+@import "utilities/conversion";
+@import "utilities/overlay";
+@import "utilities/sizing";
+@import "utilities/margins";
 
 // Partials
 // Typography
 @import "partials/typography";
 @import "partials/headers";
+@import "partials/paragraph";
 @import "partials/code";
 @import "partials/responsive";

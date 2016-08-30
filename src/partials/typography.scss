@@ -1,161 +1,6 @@
-// Default font size.
-// Don't change it ever!
-$SGL_DEFAULT_FONT_SIZE: 16;
-
-/// @type boolean
-$sgl-debug-mode: true !default;
-
-/// Base font size.
-///
-/// @type number
-$sgl-base-font-size: 20 !default;
-
-/// Base line height.
-///
-/// @type number
-$sgl-base-line-height: 1.5 !default;
-
-/// Base unit (`px`, `em`, `rem`, `pxrem`).
-///
-/// @type string
-$sgl-base-unit: "rem" !default;
-
-/// Scale factor.
-///
-/// @type number
-$sgl-scale-factor: $AUGMENTED_FOURTH !default;
-
-//
-// Headings
-//
-
-@if($sgl-debug-mode == true) {
-  body {
-    background-image: linear-gradient(to bottom, hsla(200, 100%, 50%, 0.3) 1px, transparent 1px);
-    background-repeat: repeat;
-    background-position: left -1px;
-    background-size: round(($sgl-base-font-size * $sgl-base-line-height)) * 1px round(($sgl-base-font-size * $sgl-base-line-height)) * 1px;
-  }
-  body {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: round(($sgl-base-font-size * $sgl-base-line-height)) * 1px;
-    box-shadow: 1px 0 0 hsla(200, 100%, 50%, 0.3), -1px 0 0 hsla(200, 100%, 50%, 0.3);
-  }
-}
-
-@mixin sgl-body($font-size: $sgl-base-font-size, $unit: $sgl-base-unit) {
-  $line-height: round(($font-size * $sgl-base-line-height));
-
-  @if ($unit == "px" or $unit == "pxrem") {
-    font-size: $font-size * 1px;
-    line-height: $line-height * 1px;
-  }
-
-  @if ($unit == "rem" or $unit == "pxrem") {
-    font-size: sgl-rem-calc($font-size);
-    line-height: sgl-rem-calc($line-height);
-  }
-
-  @if ($unit == "em") {
-    font-size: decimal-ceil(sgl-em-calc($font-size, $SGL_DEFAULT_FONT_SIZE), 5);
-    line-height: decimal-ceil(sgl-em-calc($line-height, $font-size), 5);
-  }
-}
-
-@mixin sgl-heading($step, $unit: $sgl-base-unit, $base-value: $sgl-base-font-size) {
-  $font-size: $sgl-base-font-size;
-  $scale: $sgl-scale-factor;
-  $computed-font-size: round($font-size * sgl-exponent($scale, $step));
-  $line-height: round($font-size * $sgl-base-line-height);
-  $lines: ceil($computed-font-size / $line-height);
-  $computed-line-height: $line-height * $lines;
-  $margin-top: $line-height;
-  @if ($step > 1) {
-    $margin-top: $line-height * 2;
-  }
-
-  @if ($unit == "px" or $unit == "pxrem") {
-    font-size: $computed-font-size * 1px;
-    line-height: $computed-line-height * 1px;
-    margin-top: $margin-top * 1px;
-    margin-bottom: $line-height * 1px;
-  }
-
-  @if ($unit == "rem" or $unit == "pxrem") {
-    font-size: sgl-rem-calc($computed-font-size);
-    line-height: sgl-rem-calc($computed-line-height);
-    margin-top: sgl-rem-calc($margin-top);
-    margin-bottom: sgl-rem-calc($line-height);
-  }
-
-  @if ($unit == "em") {
-    font-size: decimal-ceil(sgl-em-calc($computed-font-size, $base-value), 5);
-    line-height: decimal-ceil(sgl-em-calc($computed-line-height, $computed-font-size), 5);
-    margin-top: decimal-ceil(sgl-em-calc($margin-top, $computed-font-size), 5);
-    margin-bottom: decimal-ceil(sgl-em-calc($line-height, $computed-font-size), 5);
-  }
-}
-
-@mixin sgl-margins($unit: $sgl-base-unit, $base-value: $sgl-base-font-size) {
-  $margin: round($base-value * $sgl-base-line-height);
-
-  @if ($unit == "px" or $unit == "pxrem") {
-    margin-top: $margin * 1px;
-    margin-bottom: $margin * 1px;
-  }
-
-  @if ($unit == "rem" or $unit == "pxrem") {
-    margin-top: sgl-rem-calc($margin);
-    margin-bottom: sgl-rem-calc($margin);
-  }
-
-  @if ($unit == "em") {
-    margin-top: decimal-ceil(sgl-em-calc($margin, $base-value), 5);
-    margin-bottom: decimal-ceil(sgl-em-calc($margin, $base-value), 5);
-  }
-}
-h1, .h1 {
-  @include sgl-heading(4, "rem");
-}
-h2, .h2 {
-  @include sgl-heading(3, "rem");
-}
-h3, .h3 {
-  @include sgl-heading(2, "rem");
-}
-h4, .h4 {
-  @include sgl-heading(1, "rem");
-}
-
-h5, .h5 {
-  @include sgl-heading(1, "rem");
-}
-h6, .h6 {
-  @include sgl-heading(0, "rem");
-}
-
 .lead {
-  @include sgl-heading(1, "rem")
+  @include heading-size(1)
   font-weight: $lead-font-weight;
-}
-
-// Type display classes
-.display-1 {
-  font-size: $display1-size;
-  font-weight: $display1-weight;
-}
-.display-2 {
-  font-size: $display2-size;
-  font-weight: $display2-weight;
-}
-.display-3 {
-  font-size: $display3-size;
-  font-weight: $display3-weight;
-}
-.display-4 {
-  font-size: $display4-size;
-  font-weight: $display4-weight;
 }
 
 
@@ -164,12 +9,11 @@ h6, .h6 {
 //
 
 p, ul, ol, blockquote, table, code, pre {
-  @include sgl-heading(0, "rem");
-  @include sgl-margins();
+  @include margin();
 }
 
 hr {
-  @include sgl-margins();
+  @include margin();
   border: 0;
   border-top: 1px solid $gray-light;
 }
@@ -182,12 +26,8 @@ hr {
 small, .small {
   font-weight: normal;
 
-  @include sgl-heading(-1, "px");
+  @include heading-size(-1, "px");
 }
-
-//
-// Lists
-//
 
 .list-unstyled {
   //@include list-unstyled;
