@@ -1,0 +1,11 @@
+@media screen and (max-width: $sm) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: $xl) {
+  html {
+    font-size: 18px;
+  }
+}

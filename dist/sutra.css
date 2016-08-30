@@ -419,3 +419,11 @@ code {
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+@media screen and (max-width: 544px) {
+  html {
+    font-size: 14px; } }
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 18px; } }
