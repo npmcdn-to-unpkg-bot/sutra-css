@@ -1,0 +1,177 @@
+// If a native exponent function doesnt exist
+// this one is needed.
+@function pow($Base, $Exponent) {
+  // Find and remove unit.
+  // Avoids messyness with unit calculations
+  $Unit: $Base * 0 + 1;
+  $Base: $Base/$Unit;
+  // Set up the loop, priming the return with the base.
+  $Return: $Base;
+
+  // This function doesnt support non-interger exponents.
+  // Warn the user about why this is breaking.
+  @if round($Exponent) != $Exponent {
+    @warn "Unfortunately, you need Compass to use non-integer exponents";
+  }
+
+  // If the number is positive, multiply it.
+  @if $Exponent > 0 {
+    // Basic feedback loop as exponents
+    // are recursivley multiplied numbers.
+    @for $i from 1 to $Exponent {
+      $Return: $Return * $Base;
+    }
+  }
+
+  // If the number is 0 or negitive
+  // divide instead of multiply.
+  @else {
+    // Libsass doesnt allow negitive values in loops
+    @for $i from (-1 + 1) to (abs($Exponent) + 1) {
+      $Return: $Return / $Base;
+    }
+  }
+
+  // Return is now compounded redy to be returned.
+  // Add the unit back onto the number.
+  @return $Return * $Unit;
+}
+
+// ROUND A NUMBER TO SPECIFIED DIGITS
+// @see gist.github.com/terkel/4373420
+
+@function decimal-round($number, $digits: 0, $mode: round) {
+  $n: 1;
+  // $number must be a number
+  @if type-of($number) != number {
+    @warn "#{ $number } is not a number.";
+    @return $number;
+  }
+  // $digits must be a unitless number
+  @if type-of($digits) != number {
+    @warn "#{ $digits } is not a number.";
+    @return $number;
+  } @else if not unitless($digits) {
+    @warn "#{ $digits } has a unit.";
+    @return $number;
+  }
+  @for $i from 1 through $digits {
+    $n: $n * 10;
+  }
+  @if $mode == round {
+    @return round($number * $n) / $n;
+  } @else if $mode == ceil {
+    @return ceil($number * $n) / $n;
+  } @else if $mode == floor {
+    @return floor($number * $n) / $n;
+  } @else {
+    @warn "#{ $mode } is undefined keyword.";
+    @return $number;
+  }
+}
+
+@function decimal-ceil($number, $digits: 0) {
+  @return decimal-round($number, $digits, ceil);
+}
+
+@function decimal-floor($number, $digits: 0) {
+  @return decimal-round($number, $digits, floor);
+}
+
+// EXPONENT
+// @see https://github.com/at-import/Sassy-math/blob/master/sass/math.scss
+
+@function sgl-exponent($base, $exponent) {
+  // reset value
+  $value: $base;
+  // positive intergers get multiplied
+  @if $exponent > 1 {
+    @for $i from 2 through $exponent {
+      $value: $value * $base;
+    }
+  }
+  // negitive intergers get divided. A number divided by itself is 1
+  @if $exponent < 1 {
+    @for $i from 0 through -$exponent {
+      $value: $value / $base;
+    }
+  }
+  // return the last value written
+  @return $value;
+}
+
+// CASTING A STRING TO A NUMBER
+// @see http://hugogiraudel.com/2014/01/15/sass-string-to-number/
+
+@function sgl-length($number, $unit) {
+  $strings: "px" "cm" "mm" "%" "ch" "pica" "in" "em" "rem" "pt" "pc" "ex" "vw" "vh" "vmin" "vmax";
+  $units: 1px 1cm 1mm 1% 1ch 1 pica 1in 1em 1rem 1pt 1pc 1ex 1vw 1vh 1vmin 1vmax;
+  $index: index($strings, $unit);
+
+  @if not $index {
+    @warn "Invalid unit `#{$unit}`.";
+    @return false;
+  }
+
+  @return $number * nth($units, $index);
+}
+
+@function sgl-number($string) {
+  // Matrices
+  $strings: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
+  $numbers: 0 1 2 3 4 5 6 7 8 9;
+  // Result
+  $result: 0;
+  $divider: 0;
+  $minus: false;
+
+  // Looping through all characters
+  @for $i from 1 through str-length($string) {
+    $character: str-slice($string, $i, $i);
+    $index: index($strings, $character);
+
+    @if $character == "-" {
+      $minus: true;
+    } @else if $character == "." {
+      $divider: 1;
+    } @else {
+      $number: nth($numbers, $index);
+      $result: $result + $number;
+      @if not $index {
+        $result: if($minus, $result * -1, $result);
+        @return sgl-length($result, str-slice($string, $i));
+      }
+
+      @if $divider == 0 {
+        $result: $result * 10;
+      } @else {
+        // Move the decimal dot to the left
+        $divider: $divider * 10;
+        $number: $number / $divider;
+      }
+    }
+  }
+
+  @return if($minus, $result * -1, $result);
+}
+
+// UNIT MANAGER
+// @see https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss
+
+@function sgl-strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function sgl-convert($unit, $value, $base-value: $SGL_DEFAULT_FONT_SIZE) {
+  $value: (sgl-strip-unit($value) / sgl-strip-unit($base-value) * 1rem);
+
+  @if ($value == (0 + $unit)) {
+    $value: 0;
+  }
+
+  @return $value;
+}
+
+@function sgl-rem-calc($value, $base-value: $SGL_DEFAULT_FONT_SIZE) {
+  @return sgl-convert("rem", $value, $base-value);
+}

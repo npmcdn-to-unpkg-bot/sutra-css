@@ -7,6 +7,7 @@ var scss = require('postcss-scss');
 var rename = require("gulp-rename");
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
+var csscomb = require('gulp-csscomb');
 
 gulp.task('css', function() {
   var processors = [
@@ -30,6 +31,17 @@ gulp.task('css-min', function() {
   }))
   .pipe(gulp.dest('./dist'))
 });
+
+gulp.task('css-comb', function() {
+  return gulp.src('src/**/*.scss')
+  .pipe(csscomb())
+  .pipe(gulp.dest('./src/'));
+});
+
+gulp.task('watch', function() {
+  gulp.watch('src/**/*.scss', ['css','css-min']).on('change', browserSync.reload);
+})
+
 
 gulp.task('browser-sync', function() {
   browserSync.init({

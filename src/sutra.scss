@@ -1,6 +1,18 @@
-/* User Configuration */
-@import "sutra.config.scss";
+// Configuration
 
-/* Reset Stylesheet */
-@import "utilities/reset.scss";
+// Constants
+@import "constants/type-scale";
 
+// User
+@import "sutra.config";
+
+// Utlities: Reset
+@import "utilities/reset";
+@import "utilities/math";
+
+// Partials
+// Typography
+@import "partials/typography";
+@import "partials/headers";
+@import "partials/code";
+@import "partials/responsive";
