@@ -19,11 +19,13 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
+    "browser-sync": "^2.14.0",
     "cssnano": "^3.7.4",
     "gulp": "^3.9.1",
     "gulp-cssimport": "^3.1.0",
     "gulp-postcss": "^6.1.1",
     "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
     "postcss-nested": "^1.0.0",
     "postcss-scss": "^0.2.1"
   }
