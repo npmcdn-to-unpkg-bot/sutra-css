@@ -11,8 +11,10 @@ $headings: (
 
 @each $heading, $properties in $headings {
   #{$heading} {
+    text-rendering: optimizeLegibility;
     @include heading-size($properties);
-
+    font-family: $font-family-sans-serif;
+    weight: 400;
     color: $gray-dark;
   }
 }

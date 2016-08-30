@@ -2,12 +2,13 @@
 @mixin body-size($font-size: $font-size-base, $unit: "rem") {
 
   // Line height
-  $line-height: round(($font-size * $line-height-base));
+  $line-height: round($font-size * $line-height-base);
 
   font-size: sgl-rem-calc($font-size);
   line-height: sgl-rem-calc($line-height);
 }
 
+// Setting header size (modular scale)
 @mixin heading-size($step, $unit: "rem", $base-value: $font-size-base) {
 
   // Font Size

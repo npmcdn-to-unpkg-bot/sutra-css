@@ -1,12 +1,3 @@
-.lead {
-  @include heading-size(1)
-  font-weight: $lead-font-weight;
-}
-
-
-//
-// Horizontal rules
-//
 
 p, ul, ol, blockquote, table, code, pre {
   @include margin();

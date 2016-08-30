@@ -3,3 +3,24 @@
     margin-top: sgl-rem-calc($margin);
     margin-bottom: sgl-rem-calc($margin);
 }
+
+@for $i from 1 through 4 {
+  .margin-#{$i} {
+    margin: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+  }
+  .margin-right-#{$i} {
+    margin-right: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+  }
+  .margin-left-#{$i} {
+    margin-left: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+  }
+  .margin-top-#{$i} {
+    margin-top: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+  }
+  .margin-bottom-#{$i} {
+    margin-bottom: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+  }
+  .margin-x-#{$i} {
+    margin: 0 sgl-rem-calc($i * round($font-size-base * $line-height-base));
+  }
+}

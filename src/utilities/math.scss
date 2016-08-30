@@ -4,10 +4,6 @@
   $Base: $Base/$Unit;
   $Return: $Base;
 
-  @if round($Exponent) != $Exponent {
-    @warn "Unfortunately, you need Compass to use non-integer exponents";
-  }
-
   @if $Exponent > 0 {
     @for $i from 1 to $Exponent {
       $Return: $Return * $Base;

@@ -1,9 +1,15 @@
 p {
   @include body-size();
-  padding-left: 1rem;
+  @if ($indent-paragraphs == true) {
+    margin-left: sgl-rem-calc(round($font-size-base * $line-height-base));
+  }
+  font-family: $font-family-serif;
+  text-rendering: optimizeLegibility;
+  display: block;
 
-  .lead {
+  &.lead {
     @include heading-size(1);
-    font-weight: $lead-font-weight;
+    font-weight: 500;
+    font-style: italic;
   }
 }

@@ -1,3 +1,17 @@
-p > code {
-  @include body-size(0);
+code, pre {
+  @include heading-size(-1);
 }
+
+pre {
+  @if ($indent-paragraphs == true) {
+    @extend .margin-left-1;
+  }
+  background: $gray-lighter;
+  border-radius: 3px;
+  @extend .padding-1;
+}
+
+code {
+  line-height: sgl-rem-calc(round($font-size-base * $line-height-base));
+}
+
