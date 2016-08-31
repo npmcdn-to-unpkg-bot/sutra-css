@@ -31,11 +31,11 @@
 @mixin heading-size($step, $unit: "rem", $base-value: $font-size-base) {
   // Font Size
   // Example round(18px * 1.414^3) -> 50
-  $computed-font-size: round($font-size-base * pow($scale-factor, $step));
+  $computed-font-size: decimal-round($font-size-base * pow($scale-factor, $step));
   font-size: sgl-rem-calc($computed-font-size);
 
   // Line height
-  $line-height: round($font-size-base * $line-height-base);
+  $line-height: decimal-round($font-size-base * $line-height-base);
   $computed-line-height: $line-height * ceil($computed-font-size / $line-height);
   line-height: sgl-rem-calc($computed-line-height);
 
@@ -49,9 +49,9 @@
 }
 
 @mixin leading-calc($n-lines) {
-  $computed-font-size: round($font-size-base * pow($scale-factor, 0));
+  $computed-font-size: decimal-round($font-size-base * pow($scale-factor, 0));
   // Line height
-  $line-height: round($font-size-base * $line-height-base * $n-lines);
+  $line-height: decimal-round($font-size-base * $line-height-base * $n-lines);
   $computed-line-height: $line-height * ceil($computed-font-size / $line-height);
   line-height: sgl-rem-calc($computed-line-height);
 }

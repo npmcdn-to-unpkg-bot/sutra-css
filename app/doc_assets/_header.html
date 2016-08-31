@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title><%= title %> <% if title != '' %>&ndash;<% end %> <%= @config['global_title'] %></title>
+
+  <!-- Styleguide CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../dist/sutra.css">
+  <link rel="stylesheet" href="../docs/style.css">
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('pre').each(function(i, block) {
+        hljs.highlightBlock(block);
+        console.log(block);
+      });
+    });
+  </script>
+
+  <!-- Source CSS --><% if @config['css_include'].to_s.strip.length != 0 %> <% @config['css_include'].each do |css| %>
+  <link rel="stylesheet" href="<%= css %>">
+  <% end %> <% end %>
+</head>
+
+<body id="sutra" class="hgt-body">
+<header class="container">
+  <h1 class="h4">Sutra CSS</h1>
+</header>
+
+<div class="sutra-page">
+
+  <aside class="sutra-nav col-md-3" role="navigation">
+    <a href="index.html"
+       class="hgt-pagehead-nav-item <% if file_name.include?('index.html') %>selected<% end %>"> Home </a>
+
+    <% @categories.each do |cat| %>
+    <a href="<%= cat[1] %>" class="hgt-pagehead-nav-item <% if title == cat[0] %>selected<% end %>"> <%=cat[0] %> </a>
+
+    <% end %>
+  </aside>
+
+  <article class="col-md-9">
+    <div class="hgt-columns">
+      <% unless @blocks.length == 0 %>
+      <!--<div class="hgt-column one-fourth">-->
+        <!--<nav class="hgt-menu">-->
+          <!--<% @blocks.each do |block| %> <% if not block[:parent] %>-->
+          <!--<a href="#<%= block[:name] %>" class="hgt-menu-item"> <%=block[:title] %> </a> <% end %> <% end %>-->
+        <!--</nav>-->
+      <!--</div>-->
+      <% end %>
+
+      <section class="hgt-column <% unless @blocks.length == 0 %>three-fourths<% end %>">
+        <div class="hgt-content">

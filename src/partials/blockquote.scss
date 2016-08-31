@@ -2,10 +2,12 @@ blockquote, .blockquote {
   @include font-size(1);
   @extend .padding-left-2;
   @extend .double-line-height;
+  @extend .italic;
   border-left: 1px solid $gray-light;
   .blockquote-footer {
     @include font-size(-1);
-    font-family: $font-family-primary;
+    @extend .regular;
+    font-family: $font-family-secondary;
     font-weight: bold;
   }
 }

@@ -1,0 +1,20 @@
+/// On several lines if you will
+.italic {
+  font-style: italic;
+}
+
+.regular {
+  font-style: normal;
+}
+
+.primary-font {
+  font-family: $font-family-primary;
+}
+
+.secondary-font {
+  font-family: $font-family-secondary;
+}
+
+.monospace-font {
+  font-family: $font-family-monospace;
+}

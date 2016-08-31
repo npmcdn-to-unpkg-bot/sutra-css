@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title> &ndash; </title>
+
+  <!-- Styleguide CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../dist/sutra.css">
+  <link rel="stylesheet" href="../docs/style.css">
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('pre').each(function(i, block) {
+        hljs.highlightBlock(block);
+        console.log(block);
+      });
+    });
+  </script>
+
+  <!-- Source CSS -->
+</head>
+
+<body id="sutra" class="hgt-body">
+<header class="container">
+  <h1 class="h4">Sutra CSS</h1>
+</header>
+
+<div class="sutra-page">
+
+  <aside class="sutra-nav col-md-3" role="navigation">
+    <a href="index.html"
+       class="hgt-pagehead-nav-item "> Home </a>
+
+    
+    <a href="base_css.html" class="hgt-pagehead-nav-item "> Base CSS </a>
+
+    
+    <a href="index.html" class="hgt-pagehead-nav-item "> Configuration </a>
+
+    
+  </aside>
+
+  <article class="col-md-9">
+    <div class="hgt-columns">
+      
+      <!--<div class="hgt-column one-fourth">-->
+        <!--<nav class="hgt-menu">-->
+          <!-- -->
+          <!--<a href="#grid-breakpoints" class="hgt-menu-item"> Grid breakpoints </a>   -->
+          <!--<a href="#scale-factor-constants" class="hgt-menu-item"> Scale factor constants </a>  -->
+        <!--</nav>-->
+      <!--</div>-->
+      
+
+      <section class="hgt-column three-fourths">
+        <div class="hgt-content"><h1 id="grid-breakpoints" class="styleguide">Grid breakpoints</h1>
+<p class="styleguide">The grid breakpoints define at which points the new grid constraints are applied on the document.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>// Grid breakpoints
+$xs: 0;
+$sm: 544px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;</pre>
+  </div>
+</div>
+<h1 id="scale-factor-constants" class="styleguide">Scale factor constants</h1>
+<p class="styleguide">The scale factor constants are the preset modular scale factors that are used in line-height, font-size and margin calculations.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>$MINOR_SECOND: 1.067;
+$MAJOR_SECOND: 1.125;
+$MINOR_THIRD: 1.2;
+$MAJOR_THIRD: 1.25;
+$PERFECT_FOURTH: 1.333;
+$AUGMENTED_FOURTH: 1.414;
+$PERFECT_FIFTH: 1.5;
+$MINOR_SIXTH: 1.6;
+$GOLDEN_SECTION: 1.618;
+$MAJOR_SIXTH: 1.667;
+$MINOR_SEVENTH: 1.778;
+$MAJOR_SEVENTH: 1.875;
+$OCTAVE: 2;
+$MAJOR_TENTH: 2.5;
+$MAJOR_ELEVENTH: 2.667;
+$MAJOR_TWELFTH: 3;
+$DOUBLE_OCTAVE: 4;</pre>
+  </div>
+</div></div>
+</div>
+</div>
+
+<footer class="hgt-footer">
+  Built using <a href="https://github.com/trulia/hologram">Hologram</a> and
+  <a href="https://github.com/wearecube/hologram-github-theme">Hologram Github Theme</a>
+</footer>
+</div>
+
+<!--<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>-->
+<!--<script src="scripts/vendor/jquery.waypoints.min.js"></script>-->
+<!--<script src="scripts/vendor/sticky.min.js"></script>-->
+<!--<script src="scripts/vendor/infinite.min.js"></script>-->
+<script src="scripts/hgt.js"></script>
+
+
+
+
+</body>
+</html>

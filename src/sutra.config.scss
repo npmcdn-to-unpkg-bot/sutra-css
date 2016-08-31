@@ -1,3 +1,23 @@
+/*doc
+---
+title: Grid breakpoints
+name: grid-breakpoints
+category: Configuration
+---
+
+The grid breakpoints define at which points the new grid constraints are applied on the document.
+
+```scss
+// Grid breakpoints
+$xs: 0;
+$sm: 544px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+```
+
+*/
+
 // Grid breakpoints
 $xs: 0;
 $sm: 544px;

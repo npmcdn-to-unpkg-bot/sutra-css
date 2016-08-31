@@ -1,4 +1,19 @@
-// Power function
+/*doc
+---
+title: Buttons
+name: button
+category: Base CSS
+---
+
+Button styles can be applied to any element. Typically you'll want to use either a `<button>` or an `<a>` element:
+
+```html_example
+<button class="btn btnDefault">Click</button>
+<a class="btn btnPrimary" href="http://trulia.com">Trulia!</a>
+```
+
+*/
+
 @function pow($number, $exponent) {
   @if (round($exponent) != $exponent) {
     @return exp($exponent * ln($number));
@@ -71,7 +86,7 @@
   $n: 1;
   // $number must be a number
   @if type-of($number) != number {
-    @warn "#{ $number } is not a number.";
+    @warn "#{$number} is not a number.";
     @return $number;
   }
   // $digits must be a unitless number
