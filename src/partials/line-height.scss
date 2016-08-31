@@ -1,0 +1,7 @@
+.single-line-height {
+  @include leading-calc(1);
+}
+
+.double-line-height {
+  @include leading-calc(2);
+}

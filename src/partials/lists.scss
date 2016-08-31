@@ -4,5 +4,5 @@ ul, ol {
   @if ($horizontal-grid == true) {
     @extend .margin-left-1;
   }
-  font-family: $font-family-serif;
+  font-family: $font-family-primary;
 }

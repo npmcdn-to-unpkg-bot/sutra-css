@@ -28,10 +28,10 @@ $gray-lighter: lighten($black, 75%);
 // Typography
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: "Circular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-family-serif: "Publico Text", "Times New Roman", Times, serif !default;
+$font-family-primary: "Publico Text", "Times New Roman", Times, serif !default;
+$font-family-secondary: "Circular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base: $font-family-serif !default;
+$font-family-base: $font-family-primary !default;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 16 !default;

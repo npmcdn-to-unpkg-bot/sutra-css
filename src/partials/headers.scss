@@ -9,9 +9,9 @@ $headings: (
   h6: (-1)
 ) !default;
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
-  font-family: $font-family-sans-serif;
+  font-family: $font-family-secondary;
   weight: 400;
   color: $gray-dark;
 }

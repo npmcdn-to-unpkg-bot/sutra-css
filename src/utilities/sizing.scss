@@ -47,3 +47,11 @@
   margin-top: sgl-rem-calc($margin-top);
   margin-bottom: sgl-rem-calc($line-height);
 }
+
+@mixin leading-calc($n-lines) {
+  $computed-font-size: round($font-size-base * pow($scale-factor, 0));
+  // Line height
+  $line-height: round($font-size-base * $line-height-base * $n-lines);
+  $computed-line-height: $line-height * ceil($computed-font-size / $line-height);
+  line-height: sgl-rem-calc($computed-line-height);
+}

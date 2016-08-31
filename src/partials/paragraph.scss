@@ -3,7 +3,7 @@ p {
   @if ($indent-paragraphs == true) {
     margin-left: sgl-rem-calc(round($font-size-base * $line-height-base));
   }
-  font-family: $font-family-serif;
+  font-family: $font-family-primary;
   text-rendering: optimizeLegibility;
   display: block;
 

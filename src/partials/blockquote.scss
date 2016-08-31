@@ -1,8 +1,11 @@
 blockquote, .blockquote {
   @include font-size(1);
   @extend .padding-left-2;
+  @extend .double-line-height;
   border-left: 1px solid $gray-light;
   .blockquote-footer {
     @include font-size(-1);
+    font-family: $font-family-primary;
+    font-weight: bold;
   }
 }

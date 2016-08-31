@@ -48,7 +48,7 @@
 }
 
 @function exp($value) {
-  @return summation('exp-maclaurin', $value, 0, 100);
+  @return summation("exp-maclaurin", $value, 0, 100);
 }
 
 @function ln-maclaurin($x, $n) {
