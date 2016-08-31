@@ -9,12 +9,15 @@ $headings: (
   h6: (-1)
 ) !default;
 
+h1,h2,h3,h4,h5,h6 {
+  text-rendering: optimizeLegibility;
+  font-family: $font-family-sans-serif;
+  weight: 400;
+  color: $gray-dark;
+}
+
 @each $heading, $properties in $headings {
-  #{$heading} {
-    text-rendering: optimizeLegibility;
+  #{$heading}, .#{$heading} {
     @include heading-size($properties);
-    font-family: $font-family-sans-serif;
-    weight: 400;
-    color: $gray-dark;
   }
 }

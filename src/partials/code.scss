@@ -1,5 +1,6 @@
 code, pre {
-  @include heading-size(-1);
+  @include font-size(-0.5);
+  font-family: $font-family-monospace;
 }
 
 pre {
@@ -9,9 +10,8 @@ pre {
   background: $gray-lighter;
   border-radius: 3px;
   @extend .padding-1;
+  //border: 1px inset solid #e0e0e0;
 }
 
 code {
-  line-height: 1.5rem;
 }
-

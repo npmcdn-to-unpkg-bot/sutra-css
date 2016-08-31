@@ -1,33 +1,49 @@
 // Setting body size
 @mixin body-size($font-size: $font-size-base, $unit: "rem") {
-
   // Line height
   $line-height: round($font-size * $line-height-base);
-
   font-size: sgl-rem-calc($font-size);
   line-height: sgl-rem-calc($line-height);
 }
 
 // Setting header size (modular scale)
-@mixin heading-size($step, $unit: "rem", $base-value: $font-size-base) {
-
+@mixin font-size($step, $unit: "rem", $base-value: $font-size-base) {
   // Font Size
   // Example round(18px * 1.414^3) -> 50
   $computed-font-size: round($font-size-base * pow($scale-factor, $step));
+  font-size: sgl-rem-calc($computed-font-size);
 
   // Line height
   $line-height: round($font-size-base * $line-height-base);
-  $computed-line-height: $line-heiggsht * ceil($computed-font-size / $line-height);
+  $computed-line-height: $line-height * ceil($computed-font-size / $line-height);
+  line-height: sgl-rem-calc($computed-line-height);
 
   // Margin top
   $margin-top: $line-height;
-
-  font-size: sgl-rem-calc($computed-font-size);
-  line-height: sgl-rem-calc($computed-line-height);
-
   @if ($step > 1) {
     $margin-top: $line-height * 2;
   }
-  margin-top: sgl-rem-calc($margin-top / 3 * 5);
-  margin-bottom: sgl-rem-calc($line-height / 3 * 1);
+  margin-top: sgl-rem-calc($margin-top);
+  margin-bottom: sgl-rem-calc($line-height);
+}
+
+// Setting header size (modular scale)
+@mixin heading-size($step, $unit: "rem", $base-value: $font-size-base) {
+  // Font Size
+  // Example round(18px * 1.414^3) -> 50
+  $computed-font-size: round($font-size-base * pow($scale-factor, $step));
+  font-size: sgl-rem-calc($computed-font-size);
+
+  // Line height
+  $line-height: round($font-size-base * $line-height-base);
+  $computed-line-height: $line-height * ceil($computed-font-size / $line-height);
+  line-height: sgl-rem-calc($computed-line-height);
+
+  // Margin top
+  $margin-top: $line-height;
+  @if ($step > 1) {
+    $margin-top: $line-height * 2;
+  }
+  margin-top: sgl-rem-calc($margin-top);
+  margin-bottom: sgl-rem-calc($line-height);
 }

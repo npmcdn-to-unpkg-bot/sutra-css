@@ -11,15 +11,34 @@
 
 </head>
 
-<body class="">
+<body>
+
+<style>
+  .max-width-3 {
+    max-width: 42rem;
+  }
+  .bg-orange {
+    background: orangered;
+    overflow:auto;
+  }
+  h1 {
+    color: white;
+  }
+</style>
+<div class="bg-orange">
+  <div class="max-width-3 mx-auto antialiased">
+    <div class="row">
+      <h1 id="toc_0">Sutra CSS</h1>
+    </div>
+  </div>
+</div>
+
 <div class="max-width-3 mx-auto antialiased">
 
-  <h1 id="toc_0">Markdown: Syntax</h1>
-
-  <hr>
-
   <h2 id="overview">Overview</h2>
-  <p class="lead">Markdown is intended to be as easy-to-read and easy-to-write as is feasible.</p>
+  <p class="lead">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+    amet risus. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac,
+    vestibulum at eros.</p>
 
   <p>Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as
     plain text, without looking like it&#39;s been marked up with tags or formatting instructions. While Markdown&#39;s
@@ -43,6 +62,11 @@
     my opinion, HTML tags are already easy to insert. The idea for Markdown is to make it easy to read, write, and edit
     prose. HTML is a <em>publishing</em> format; Markdown is a <em>writing</em> format. Thus, Markdown&#39;s formatting
     syntax only addresses issues that can be conveyed in plain text.</p>
+
+  <blockquote>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum.
+    <p class="blockquote-footer">Oddur Sigurdsson</p>
+  </blockquote>
 
   <p>For any markup that is not covered by Markdown&#39;s syntax, you simply use HTML itself. There&#39;s no need to
     preface it or delimit it to indicate that you&#39;re switching from Markdown to HTML; you just use the tags.</p>

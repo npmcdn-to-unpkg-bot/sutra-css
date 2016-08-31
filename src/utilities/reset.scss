@@ -20,10 +20,11 @@ html {
 
 body {
   font-family: $font-family-base;
-  font-size: $font-size-base;
+  font-size: #{$font-size-base} + "px";
   line-height: $line-height-base;
   color: $gray-light;
   background-color: none;
+  margin: 0;
 }
 
 [tabindex="-1"]:focus {
@@ -61,7 +62,7 @@ ol ol, ul ul, ol ul, ul ol {
 }
 
 dt {
-  font-weight: $dt-font-weight;
+  font-weight: 400;
 }
 
 dd {

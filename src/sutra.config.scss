@@ -6,25 +6,32 @@ $lg: 992px;
 $xl: 1200px;
 
 // Horizontal grid (bool)
-$horizontal-grid: false !default;
+$horizontal-grid: true !default;
 
 // Indented paragraphs
-$indent-paragraphs: true !default
+$indent-paragraphs: false !default
+$indent-amount: 1rem;
+
+// Responsive sizing
+$responsive: true !default;
+$responsive-breakpoints: 0;
 
 // Colors
 
 $black: #333;
-$gray-dark: lighten($black, 5%);
-$gray-light: lighten($black, 15%);
+$gray-darker: lighten($black, 5%);
+$gray-dark: lighten($black, 10%);
+$gray-middle: rgb(128,128,128);
+$gray-light: lighten($black, 25%);
 $gray-lighter: lighten($black, 75%);
 
 // Typography
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: 'Circular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-family-serif: 'Publico Text', 'Times New Roman', Times, serif !default;
+$font-family-sans-serif: "Circular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif: "Publico Text", "Times New Roman", Times, serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base: $font-family-sans-serif !default;
+$font-family-base: $font-family-serif !default;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 16 !default;
@@ -33,22 +40,3 @@ $line-height-base: 1.6 !default;
 
 // Scale factor
 $scale-factor: $AUGMENTED_FOURTH !default;
-
-$headings-font-family: inherit !default;
-$headings-font-weight: 500 !default;
-$headings-line-height: 1.1 !default;
-$headings-color: inherit !default;
-$small-font-size: 80% !default;
-$text-muted: $gray-light !default;
-$abbr-border-color: $gray-light !default;
-$blockquote-small-color: $gray-light !default;
-$blockquote-font-size: ($font-size-base * 1.25) !default;
-$blockquote-border-color: $gray-lighter !default;
-$blockquote-border-width: 0.25rem !default;
-$hr-border-color: rgba(0,0,0,0.1) !default;
-//$hr-border-width: $border-width !default;
-$mark-padding: 0.2em !default;
-$dt-font-weight: bold !default;
-$kbd-box-shadow: inset 0 -0.1rem 0 rgba(0,0,0,0.25) !default;
-$nested-kbd-font-weight: bold !default;
-$list-inline-padding: 5px !default;

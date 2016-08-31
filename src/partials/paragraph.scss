@@ -8,8 +8,12 @@ p {
   display: block;
 
   &.lead {
-    @include heading-size(1);
+    @include font-size(0.5);
     font-weight: 500;
     font-style: italic;
   }
+}
+
+h3 + p {
+  //margin-top: -1em;
 }

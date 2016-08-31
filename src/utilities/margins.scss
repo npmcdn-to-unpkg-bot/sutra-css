@@ -1,7 +1,7 @@
 @mixin margin($base-value: $font-size-base) {
   $margin: round($base-value * $line-height-base);
-    margin-top: sgl-rem-calc($margin);
-    margin-bottom: sgl-rem-calc($margin);
+  margin-top: sgl-rem-calc($margin);
+  margin-bottom: sgl-rem-calc($margin);
 }
 
 @for $i from 1 through 4 {

@@ -1,12 +1,15 @@
 @if($horizontal-grid == true) {
   body {
-    background-image: linear-gradient(to bottom, hsla(200, 100%, 50%, 0.3) 1px, transparent 1px);
-    background-repeat: repeat;
+    background-image: linear-gradient(to bottom, hsla(200, 100%, 50%, .3) 1px, transparent 1px);
     background-position: left -1px;
-    max-width: 768px;
-    margin: 0 auto;
+    background-repeat: repeat;
     background-size: round(($font-size-base * $line-height-base)) * 1px round(($font-size-base * $line-height-base)) * 1px;
-    padding: round(($font-size-base * $line-height-base)) * 1px;
-    box-shadow: 1px 0 0 hsla(200, 100%, 50%, 0.3), -1px 0 0 hsla(200, 100%, 50%, 0.3);
   }
+
+  //body {
+  //  box-shadow: 1px 0px 0px hsla(200, 100%, 50%, .3), -1px 0px 0px hsla(200, 100%, 50%, .3);
+  //  margin: 0 auto;
+  //  max-width: 75%;
+  //  padding: round(($font-size-base * $line-height-base)) * 1px;
+  //}
 }
