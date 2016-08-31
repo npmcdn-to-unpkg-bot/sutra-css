@@ -36,32 +36,10 @@ small, .small {
   }
 }
 
-
-//
-// Misc
-//
-
 // Builds on `abbr`
 .initialism {
   font-size: 90%;
   text-transform: uppercase;
-}
-
-// Blockquotes
-.blockquote {
-  //font-size: $blockquote-font-size;
-  //border-left: $blockquote-border-width solid $blockquote-border-color;
-}
-
-.blockquote-footer {
-  font-size: 80%; // back to default font-size
-
-  display: block;
-  //color: $blockquote-small-color;
-
-  &::before {
-    content: "\2014 \00A0"; // em dash, nbsp
-  }
 }
 
 // Opposite alignment of blockquote

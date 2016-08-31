@@ -1,3 +1,20 @@
+/*doc
+---
+title: Anti-aliasing
+name: antialiasing
+category: Helpers
+---
+
+Antialiasing is a product of Satan and should be messed with carefully.
+
+```html_example
+<h4>Without Anti-aliasing</h4>
+<h4 class="antialiased">With Anti-aliasing</h4>
+```
+
+*/
+
+
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

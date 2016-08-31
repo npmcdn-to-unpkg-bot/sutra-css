@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title> &ndash; </title>
+  <title>Helpers &ndash; </title>
 
   <!-- Styleguide CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
@@ -37,7 +37,7 @@
       <ul>
         
         <li>
-          <a href="helpers.html" class="hgt-pagehead-nav-item ">
+          <a href="helpers.html" class="hgt-pagehead-nav-item selected">
             Helpers
           </a>
         </li>
@@ -70,72 +70,27 @@
         <!--<div class="hgt-column one-fourth">-->
         <!--<nav class="hgt-menu">-->
         <!-- -->
-        <!--<a href="#grid-breakpoints" class="hgt-menu-item"> Grid breakpoints </a>   -->
-        <!--<a href="#horizontal-grid" class="hgt-menu-item"> Horizontal Gird </a>   -->
-        <!--<a href="#scale-factor-constants" class="hgt-menu-item"> Scale factor constants </a>  -->
+        <!--<a href="#antialiasing" class="hgt-menu-item"> Anti-aliasing </a>  -->
         <!--</nav>-->
         <!--</div>-->
         
 
         <section class="hgt-column three-fourths">
           <div class="hgt-content">
-<h1 id="grid-breakpoints" class="styleguide">Grid breakpoints</h1>
-<p class="styleguide">The grid breakpoints define at which points the new grid constraints are applied on the document.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>// Grid breakpoints
-$xs: 0;
-$sm: 544px;
-$md: 768px;
-$lg: 992px;
-$xl: 1200px;</pre>
+<h1 id="antialiasing" class="styleguide">Anti-aliasing</h1>
+<p class="styleguide">Antialiasing is a product of Satan and should be messed with carefully.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <h4>Without Anti-aliasing</h4>
+<h4 class="antialiased">With Anti-aliasing</h4>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;h4&gt;</span>Without Anti-aliasing<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"antialiased"</span><span class="nt">&gt;</span>With Anti-aliasing<span class="nt">&lt;/h4&gt;</span></pre>
+    </div>
   </div>
 </div>
-<h1 id="horizontal-grid" class="styleguide">Horizontal Gird</h1>
-<p class="styleguide">The grid breakpoints define at which points the new grid constraints are applied on the document.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>$horizontal-grid: true !default;</pre>
-  </div>
-</div>
-<h1 id="scale-factor-constants" class="styleguide">Scale factor constants</h1>
-<p class="styleguide">The scale factor constants are the preset modular scale factors that are used in line-height, font-size and margin calculations.</p><div class="codeTable">
-  <table>
-    <tbody>
-      
-        <tr>
-          <th>
-            <div class="exampleOutput">
-              <button class="btn btnDefault">Click</button>
-            </div>
-          </th>
-          <td>
-            <div class="codeBlock">
-              <div class="highlight">
-                <pre><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btnDefault"</span><span class="nt">&gt;</span>Click<span class="nt">&lt;/button&gt;</span></pre>
-              </div>
-            </div>
-          </td>
-        </tr>
-      
-        <tr>
-          <th>
-            <div class="exampleOutput">
-              <a class="btn btnDefault" href="trulia.com">Trulia!</a>
-
-            </div>
-          </th>
-          <td>
-            <div class="codeBlock">
-              <div class="highlight">
-                <pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btnDefault"</span> <span class="na">href=</span><span class="s">"trulia.com"</span><span class="nt">&gt;</span>Trulia!<span class="nt">&lt;/a&gt;</span></pre>
-              </div>
-            </div>
-          </td>
-        </tr>
-      
-    </tbody>
-  </table>
-</div>
-
 </div>
 </div>
 </div>

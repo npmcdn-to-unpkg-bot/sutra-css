@@ -30,28 +30,34 @@
   <h1 class="h4">Sutra CSS</h1>
 </header>
 
-<div class="sutra-page">
+<div class="sutra-page container">
+  <div class="row">
+    <aside class="sutra-nav col-md-3" role="navigation">
+      <a href="index.html"
+         class="hgt-pagehead-nav-item <% if file_name.include?('index.html') %>selected<% end %>"><p>Home</p></a>
 
-  <aside class="sutra-nav col-md-3" role="navigation">
-    <a href="index.html"
-       class="hgt-pagehead-nav-item <% if file_name.include?('index.html') %>selected<% end %>"> Home </a>
+      <ul>
+        <% @categories.each do |cat| %>
+        <li>
+          <a href="<%= cat[1] %>" class="hgt-pagehead-nav-item <% if title == cat[0] %>selected<% end %>">
+            <%=cat[0] %>
+          </a>
+        </li>
+        <% end %>
+      </ul>
 
-    <% @categories.each do |cat| %>
-    <a href="<%= cat[1] %>" class="hgt-pagehead-nav-item <% if title == cat[0] %>selected<% end %>"> <%=cat[0] %> </a>
+    </aside>
 
-    <% end %>
-  </aside>
-
-  <article class="col-md-9">
-    <div class="hgt-columns">
-      <% unless @blocks.length == 0 %>
-      <!--<div class="hgt-column one-fourth">-->
+    <article class="col-md-9">
+      <div class="hgt-columns">
+        <% unless @blocks.length == 0 %>
+        <!--<div class="hgt-column one-fourth">-->
         <!--<nav class="hgt-menu">-->
-          <!--<% @blocks.each do |block| %> <% if not block[:parent] %>-->
-          <!--<a href="#<%= block[:name] %>" class="hgt-menu-item"> <%=block[:title] %> </a> <% end %> <% end %>-->
+        <!--<% @blocks.each do |block| %> <% if not block[:parent] %>-->
+        <!--<a href="#<%= block[:name] %>" class="hgt-menu-item"> <%=block[:title] %> </a> <% end %> <% end %>-->
         <!--</nav>-->
-      <!--</div>-->
-      <% end %>
+        <!--</div>-->
+        <% end %>
 
-      <section class="hgt-column <% unless @blocks.length == 0 %>three-fourths<% end %>">
-        <div class="hgt-content">
+        <section class="hgt-column <% unless @blocks.length == 0 %>three-fourths<% end %>">
+          <div class="hgt-content">

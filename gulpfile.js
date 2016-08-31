@@ -68,7 +68,7 @@ gulp.task('hologram', function () {
 
 gulp.task('watch', ['css', 'css-docs', 'hologram'] ,function() {
   gulp.watch('./src/**/*.scss', ['css', 'css-docs', 'hologram']);
-  gulp.watch('./**/*.html', ['css', 'css-docs', 'hologram']);
+  gulp.watch('./**/*.html', ['css', 'css-docs']);
   gulp.watch('./dist/sutra.css', ['css-min'])
   gulp.watch('./app/doc_assets/**/*.scss', ['css-docs', 'hologram'])
 });

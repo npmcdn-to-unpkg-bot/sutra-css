@@ -1,7 +1,54 @@
+/*doc
+---
+title: Code
+name: code
+category: Elements
+---
+
+Antialiasing is a product of Satan and should be messed with carefully.
+
+*/
+
+/*doc
+---
+title: Code block
+name: code-block
+category: Elements
+parent: code
+---
+
+Antialiasing is a product of Satan and should be messed with carefully.
+
+```
+<pre>
+  <code>
+    This is a code block...
+  </code>
+</pre>
+```
+
+*/
+
 code, pre {
   @include font-size(-0.5);
   font-family: $font-family-monospace;
 }
+
+/*doc
+---
+title: Inline code
+name: inline-code
+category: Elements
+parent: code
+---
+
+Antialiasing is a product of Satan and should be messed with carefully.
+
+```html_example
+  <p>This is an example of <code>~inline-code</code>.</p>
+```
+
+*/
 
 pre {
   @if ($indent-paragraphs == true) {
@@ -10,5 +57,5 @@ pre {
   background: $gray-lighter;
   border-radius: 3px;
   @extend .padding-1;
-  //border: 1px inset solid #e0e0e0;
+  border-bottom: 1px solid black;
 }

@@ -1,51 +1,63 @@
-// Setting body size
-@mixin body-size($font-size: $font-size-base, $unit: "rem") {
-  // Line height
-  $line-height: round($font-size * $line-height-base);
-  font-size: sgl-rem-calc($font-size);
-  line-height: sgl-rem-calc($line-height);
+// Font size function
+@function font-size ($step: 0, $font-size: $font-size-base) {
+
+  // Return font-size * scale multiplier in REMs
+  @return sgl-rem-calc($font-size-base * pow($scale-factor, $step));
 }
 
-// Setting header size (modular scale)
-@mixin font-size($step, $unit: "rem", $base-value: $font-size-base) {
-  // Font Size
-  // Example round(18px * 1.414^3) -> 50
-  $computed-font-size: round($font-size-base * pow($scale-factor, $step));
-  font-size: sgl-rem-calc($computed-font-size);
+// Line height function
+@function line-height ($step: 0) {
 
-  // Line height
-  $line-height: round($font-size-base * $line-height-base);
-  $computed-line-height: $line-height * ceil($computed-font-size / $line-height);
-  line-height: sgl-rem-calc($computed-line-height);
+  // True line height
+  $line-height: (sgl-rem-calc($font-size-base) * $line-height-base);
 
-  // Margin top
-  $margin-top: $line-height;
+  // Return
+  @return $line-height * ceil(font-size($step: 0) / $line-height);
+}
+
+@mixin margins ($step: 0) {
+
+  // True line height
+  $line-height: (sgl-rem-calc($font-size-base) * $line-height-base);
+
+  $margin-top: $font-size-base * $line-height-base;
+
   @if ($step > 1) {
     $margin-top: $line-height * 2;
   }
+
   margin-top: sgl-rem-calc($margin-top);
   margin-bottom: sgl-rem-calc($line-height);
+}
+
+// Body size
+@mixin body-size($font-size: $font-size-base, $unit: "rem") {
+
+  // Set font size with a scale factor of 0
+  font-size: font-size(0);
+
+  // Set line height with a scale factor of 0
+  line-height: line-height(0);
+}
+
+
+// Setting header size (modular scale)
+@mixin font-size($step, $unit: "rem", $base-value: $font-size-base) {
+
+  font-size: font-size($step);
+
+  line-height: line-height($step);
+
+  @include margins($step)
 }
 
 // Setting header size (modular scale)
 @mixin heading-size($step, $unit: "rem", $base-value: $font-size-base) {
-  // Font Size
-  // Example round(18px * 1.414^3) -> 50
-  $computed-font-size: decimal-round($font-size-base * pow($scale-factor, $step));
-  font-size: sgl-rem-calc($computed-font-size);
+  font-size: font-size($step);
 
-  // Line height
-  $line-height: decimal-round($font-size-base * $line-height-base);
-  $computed-line-height: $line-height * ceil($computed-font-size / $line-height);
-  line-height: sgl-rem-calc($computed-line-height);
+  line-height: line-height($step);
 
-  // Margin top
-  $margin-top: $line-height;
-  @if ($step > 1) {
-    $margin-top: $line-height * 2;
-  }
-  margin-top: sgl-rem-calc($margin-top);
-  margin-bottom: sgl-rem-calc($line-height);
+  @include margins($step);
 }
 
 @mixin leading-calc($n-lines) {

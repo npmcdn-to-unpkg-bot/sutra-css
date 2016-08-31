@@ -25,6 +25,21 @@ $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 
+/*doc
+---
+title: Horizontal Gird
+name: horizontal-grid
+category: Configuration
+---
+
+The grid breakpoints define at which points the new grid constraints are applied on the document.
+
+```scss
+$horizontal-grid: true !default;
+```
+
+*/
+
 // Horizontal grid (bool)
 $horizontal-grid: true !default;
 
@@ -48,8 +63,8 @@ $gray-lighter: lighten($black, 75%);
 // Typography
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-primary: "Publico Text", "Times New Roman", Times, serif !default;
-$font-family-secondary: "Circular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-secondary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base: $font-family-primary !default;
 
