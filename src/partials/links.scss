@@ -1,0 +1,26 @@
+a {
+  background: transparent;
+  color: crimson;
+  transition: all .3s;
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+
+  &:hover {
+    color: lighten(crimson, 10%);
+  }
+
+  &:visited {
+    color: darken(crimson, 10%);
+
+    &:hover {
+      color: darken(crimson, 15%);
+    }
+  }
+
+  &:active {
+    color: darken(crimson, 10%);
+  }
+}

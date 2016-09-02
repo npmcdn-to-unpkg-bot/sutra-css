@@ -1,10 +1,10 @@
 @if($horizontal-grid == true) {
-  body {
+  .grid {
     background-image: linear-gradient(to bottom, hsla(200, 100%, 50%, 0.3) 1px, transparent 1px);
-    background-position: left -1px;
+    //background-position: left -1px;
     background-repeat: repeat;
-    @media screen and (max-width: $xl) and (min-width: $sm) {
-      background-size: round(($font-size-base * $line-height-base)) * 1px round(($font-size-base * $line-height-base)) * 1px;
-    }
+    //@media screen and (max-width: $xl) and (min-width: $sm) {
+      background-size: line-height(0) line-height(0);
+    //}
   }
 }

@@ -1,10 +1,10 @@
 
-p, ul, ol, blockquote, table, code, pre {
-  @include margin();
+p, ul, ol, table {
+  @include margins(0);
 }
 
 hr {
-  @include margin();
+  @include margins(2);
   border: 0;
   border-top: 1px solid $gray-light;
 }

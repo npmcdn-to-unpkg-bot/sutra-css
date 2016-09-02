@@ -1,20 +1,20 @@
-@for $i from 1 through 4 {
+@for $i from 0 through 4 {
   .padding-#{$i} {
-    padding: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+    padding: $i * line-height(0);
   }
   .padding-right-#{$i} {
-    padding-right: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+    padding-right: $i * line-height(0);
   }
   .padding-left-#{$i} {
-    padding-left: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+    padding-left: $i * line-height(0);
   }
   .padding-top-#{$i} {
-    padding-top: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+    padding-top: $i * line-height(0);
   }
   .padding-bottom-#{$i} {
-    padding-bottom: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+    padding-bottom: $i * line-height(0);
   }
   .padding-x-#{$i} {
-    padding: 0 sgl-rem-calc($i * round($font-size-base * $line-height-base));
+    padding: 0 $i * line-height(0);
   }
 }

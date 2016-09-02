@@ -1,26 +1,20 @@
-@mixin margin($base-value: $font-size-base) {
-  $margin: round($base-value * $line-height-base);
-  margin-top: sgl-rem-calc($margin);
-  margin-bottom: sgl-rem-calc($margin);
-}
-
-@for $i from 1 through 4 {
+@for $i from 0 through 4 {
   .margin-#{$i} {
-    margin: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+    margin: ($i * line-height(0));
   }
   .margin-right-#{$i} {
-    margin-right: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+    margin-right: ($i * line-height(0));
   }
   .margin-left-#{$i} {
-    margin-left: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+    margin-left: ($i * line-height(0));
   }
   .margin-top-#{$i} {
-    margin-top: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+    margin-top: ($i * line-height(0));
   }
   .margin-bottom-#{$i} {
-    margin-bottom: sgl-rem-calc($i * round($font-size-base * $line-height-base));
+    margin-bottom: ($i * line-height(0));
   }
   .margin-x-#{$i} {
-    margin: 0 sgl-rem-calc($i * round($font-size-base * $line-height-base));
+    margin: 0 ($i * line-height(0));
   }
 }

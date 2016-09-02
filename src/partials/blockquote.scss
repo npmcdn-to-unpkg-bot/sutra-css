@@ -18,7 +18,7 @@ Blockquotes are useful when you want to emphasise a piece of quoted text.
 
 blockquote, .blockquote {
   @include font-size(1);
-  @extend .padding-left-2;
+  @extend .padding-left-1;
   @extend .double-line-height;
   @extend .italic;
   border-left: 1px solid $gray-light;

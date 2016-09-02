@@ -30,7 +30,8 @@ Antialiasing is a product of Satan and should be messed with carefully.
 */
 
 code, pre {
-  @include font-size(-0.5);
+  font-size: font-size(-1);
+  line-height: line-height(0);
   font-family: $font-family-monospace;
 }
 
@@ -57,5 +58,6 @@ pre {
   background: $gray-lighter;
   border-radius: 3px;
   @extend .padding-1;
-  border-bottom: 1px solid black;
+  @include margins(0);
+  overflow: hidden;
 }

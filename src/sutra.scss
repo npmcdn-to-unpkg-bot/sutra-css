@@ -1,3 +1,5 @@
+@import "utilities/sizing";
+@import "utilities/math";
 // Configuration
 
 // Constants
@@ -8,10 +10,8 @@
 
 // Utlities
 @import "utilities/reset";
-@import "utilities/math";
 @import "utilities/conversion";
 @import "utilities/overlay";
-@import "utilities/sizing";
 @import "utilities/margins";
 @import "utilities/padding";
 
@@ -20,7 +20,8 @@
 @import "partials/font";
 @import "partials/headers";
 @import "partials/paragraph";
-@import "partials/lists.scss";
+@import "partials/links";
+@import "partials/lists";
 @import "partials/line-height";
 @import "partials/code";
 @import "partials/antialiasing";

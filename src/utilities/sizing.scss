@@ -9,25 +9,30 @@
 @function line-height ($step: 0) {
 
   // True line height
-  $line-height: (sgl-rem-calc($font-size-base) * $line-height-base);
+  $line-height: (sgl-rem-calc($font-size-base * $line-height-base));
 
   // Return
-  @return $line-height * ceil(font-size($step: 0) / $line-height);
+  @return $line-height;
+}
+
+@function letter-spacing ($step: 0) {
+ @return -(sgl-rem-calc(pow($scale-factor, $step)));
 }
 
 @mixin margins ($step: 0) {
 
   // True line height
-  $line-height: (sgl-rem-calc($font-size-base) * $line-height-base);
-
-  $margin-top: $font-size-base * $line-height-base;
+  $line-height: line-height($step);
 
   @if ($step > 1) {
-    $margin-top: $line-height * 2;
+    margin-top: $line-height * 2;
+    margin-bottom: $line-height;
+  }
+  @if ($step <= 1) {
+  margin-top: $line-height;
+  margin-bottom: $line-height;
   }
 
-  margin-top: sgl-rem-calc($margin-top);
-  margin-bottom: sgl-rem-calc($line-height);
 }
 
 // Body size
@@ -38,6 +43,8 @@
 
   // Set line height with a scale factor of 0
   line-height: line-height(0);
+
+  @include margins(0)
 }
 
 
@@ -61,9 +68,9 @@
 }
 
 @mixin leading-calc($n-lines) {
-  $computed-font-size: decimal-round($font-size-base * pow($scale-factor, 0));
+  $computed-font-size: ($font-size-base * pow($scale-factor, 0));
   // Line height
-  $line-height: decimal-round($font-size-base * $line-height-base * $n-lines);
+  $line-height: ($font-size-base * $line-height-base * $n-lines);
   $computed-line-height: $line-height * ceil($computed-font-size / $line-height);
   line-height: sgl-rem-calc($computed-line-height);
 }
